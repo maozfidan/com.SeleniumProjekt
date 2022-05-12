@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class C07_manageMethodlari {
 
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","resources/drivers/chromedriver.exe");
         WebDriver driver= new ChromeDriver();
         System.out.println("pencere olculeri : " + driver.manage().window().getSize());
         System.out.println("pencere konumu : " + driver.manage().window().getPosition());

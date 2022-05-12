@@ -11,7 +11,7 @@ public class C03_IlkTest {
             3- Url'in "https://www.amazon.com" a esit oldugunu test edin
             4- sayfayi kapatin
          */
-        System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","resources/drivers/chromedriver.exe");
         WebDriver driver= new ChromeDriver();
         driver.manage().window().maximize();
         // 1- https://www.amazon.com url'ine gidin

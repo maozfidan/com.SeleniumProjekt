@@ -7,7 +7,7 @@ public class C04_DriverMethodlari {
 
     public static void main(String[] args) {
         // amazon sitesine gidip Kaynek kodlarinda "Gateway" yazdigini test edin
-        System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","resources/drivers/chromedriver.exe");
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.amazon.com");

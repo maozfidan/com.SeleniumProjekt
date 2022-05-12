@@ -11,7 +11,7 @@ public class C06_navigate {
             driver.get() yerine driver.navigate().to() method'unu kullaniriz
             ve sonrasinda forward(), back() veya refresh() method'larini kullanabiliriz
          */
-        System.setProperty("webdriver.chrome.driver","src/resources/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","resources/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.navigate().to("https://www.amazon.com");
