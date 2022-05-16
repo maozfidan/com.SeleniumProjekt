@@ -21,7 +21,7 @@ public class Deneme {
   //e. Sonra karşınıza çıkan ilk sonucun resmine tıklayın.
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver","resources/drivers/chromedriver.exe");
 
@@ -34,35 +34,51 @@ public class Deneme {
 
         WebElement aramaKutusu=driver.findElement(By.id("twotabsearchtextbox"));
 
+        Thread.sleep(3000);
+
         aramaKutusu.sendKeys("city bike"+ Keys.ENTER);
 
         //c. Amazon'da görüntülenen ilgili sonuçların sayısını yazdırın
 
         WebElement site=driver.findElement(By.xpath("//*[@id=\"search\"]/span/div/h1/div/div[1]/div/div/span[1]"));
 
+        String sonucYazisi= site.getText(); //1-16 of 163 results for
 
+        int ilkspace=sonucYazisi.indexOf(" ");
+
+        int ikincispace=sonucYazisi.indexOf(" ",ilkspace+1);
+
+        int ucuncuspace=sonucYazisi.indexOf(" ",ikincispace+1);
+
+        String sonucSayisi=sonucYazisi.substring(ikincispace+1,ucuncuspace);
+
+        int sonucSayisiSayiDeger=Integer.valueOf(sonucSayisi);
+
+        System.out.println(sonucSayisiSayiDeger);
 
        // site.getText().split(" ");
 
-        String [] arr=  site.getText().split(" ");
+   //   String [] arr=  site.getText().split(" ");
 
-        System.out.println(Arrays.toString(arr));
+   //   System.out.println(Arrays.toString(arr));
 
-        System.out.println("aranan sonuc sayi: "+arr[2]);
+   //   System.out.println("aranan sonuc sayi: "+arr[2]);
+
+
 
         //d. “Shopping” e tıklayın.
-       WebElement alisveris=driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[1]/div/span[3]/div[2]/div[2]/div/div/div/div/div/div/div/div[1]/div/div[2]/div/span/a/div"));
+    // WebElement alisveris=driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[1]/div/span[3]/div[2]/div[2]/div/div/div/div/div/div/div/div[1]/div/div[2]/div/span/a/div"));
 
 
-        alisveris.click();
+    //  alisveris.click();
 
-        WebElement satinal=driver.findElement(By.id("buy-now-button"));
+    //  WebElement satinal=driver.findElement(By.id("buy-now-button"));
 
-        satinal.click();
+    //  satinal.click();
 
-        WebElement emaill=driver.findElement(By.id("ap_email"));
+    //  WebElement emaill=driver.findElement(By.id("ap_email"));
 
-        emaill.sendKeys("ramazan5887@googlemail.com"+Keys.ENTER);
+    //  emaill.sendKeys("ramazan5887@googlemail.com"+Keys.ENTER);
 
 
 
